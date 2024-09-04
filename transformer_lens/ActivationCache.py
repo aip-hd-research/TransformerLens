@@ -831,7 +831,7 @@ class ActivationCache:
         if neuron_slice is not None:
             neuron_acts = neuron_slice.apply(neuron_acts, dim=-1)
             W_out = neuron_slice.apply(W_out, dim=0)
-        return neuron_acts[..., None] * W_out
+        return neuron_acts[..., None] * W_out.to(neuron_acts.device)
 
     def stack_neuron_results(
         self,

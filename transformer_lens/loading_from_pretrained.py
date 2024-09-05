@@ -747,7 +747,7 @@ def convert_hf_model_config(model_name: str, **kwargs):
             "final_rms": True,
             "gated_mlp": True,
         }
-    elif official_model_name.startswith("CodeLlama-7b"):  # same architecture CodeLlama and Llama-2
+    elif official_model_name.startswith("codellama/CodeLlama-7b"):  # same architecture CodeLlama and Llama-2
         cfg_dict = {
             "d_model": 4096,
             "d_head": 4096 // 32,

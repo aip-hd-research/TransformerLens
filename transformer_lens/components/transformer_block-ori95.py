@@ -179,7 +179,7 @@ class TransformerBlock(nn.Module):
             )
             normalized_resid_mid = self.ln2(mlp_in)
             mlp_out = self.apply_mlp(normalized_resid_mid)
-            resid_post = self.hook_resid_post(resid_mid.to("cuda:1") + mlp_out.to("cuda:1"))  # [batch, pos, d_model]
+            resid_post = self.hook_resid_post(resid_mid + mlp_out)  # [batch, pos, d_model]
         elif self.cfg.parallel_attn_mlp:
             # Dumb thing done by GPT-J, both MLP and Attn read from resid_pre and write to resid_post, no resid_mid used.
             # In GPT-J, LN1 and LN2 are tied, in GPT-NeoX they aren't.

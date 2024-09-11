@@ -44,7 +44,7 @@ class LensHandle:
 
 
 # Define type aliases
-NamesFilter = Optional[Union[Callable[[str], bool], Sequence[str], str]]
+NamesFilter = Optional[Union[Callable[[str], bool], Sequence[str]]]
 
 
 @runtime_checkable

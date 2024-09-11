@@ -171,7 +171,6 @@ class ActivationCache:
                 if key[1] < 0:
                     # Supports negative indexing on the layer dimension
                     key = (key[0], self.model.cfg.n_layers + key[1], *key[2:])
-        
             return self.cache_dict[utils.get_act_name(*key)]
 
     def __len__(self) -> int:

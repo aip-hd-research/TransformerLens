@@ -1284,8 +1284,7 @@ class HookedTransformer(HookedRootModule):
         state_dict = loading.get_pretrained_state_dict(
             official_model_name, cfg, hf_model, dtype=dtype, **from_pretrained_kwargs
         )
-        if official_model_name == "CodeLlama-7b-Instruct-hf":
-            cfg.tokenizer_name = "codellama/CodeLlama-7b-Instruct-hf"
+
         # Create the HookedTransformer object
         model = cls(
             cfg,

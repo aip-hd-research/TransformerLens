@@ -221,6 +221,9 @@ OFFICIAL_MODEL_NAMES = [
     "google-t5/t5-base",
     "google-t5/t5-large",
     "ai-forever/mGPT",
+    # Additions by us, not official:
+    "beowolx/MistralHermes-CodePro-7B-v1",
+    "ise-uiuc/Magicoder-S-DS-6.7B"
 ]
 """Official model names for models on HuggingFace."""
 
@@ -1005,6 +1008,8 @@ def convert_hf_model_config(model_name: str, **kwargs):
             "use_local_attn": True,
             "rotary_dim": 4096 // 32,
         }
+        if "beowolx/MistralHermes-CodePro-7B-v1" == official_model_name:
+            cfg_dict["d_vocab"] = 32002
     elif architecture == "MixtralForCausalLM":
         cfg_dict = {
             "dtype": torch.bfloat16,

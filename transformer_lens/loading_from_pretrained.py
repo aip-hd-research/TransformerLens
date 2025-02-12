@@ -648,6 +648,9 @@ MODEL_ALIASES = {
     "google-t5/t5-base": ["t5-base"],
     "google-t5/t5-large": ["t5-large"],
     "ai-forever/mGPT": ["mGPT"],
+    # Additions by us, not official:
+    "beowolx/MistralHermes-CodePro-7B-v1": ["MistralHermes-CodePro-7B-v1"],
+    "ise-uiuc/Magicoder-S-DS-6.7B": ["Magicoder-S-DS-6.7B"],
 }
 """Model aliases for models on HuggingFace."""
 
